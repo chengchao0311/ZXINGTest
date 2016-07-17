@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import <ZXingObjC/ZXingObjC.h>
 
-@interface ViewController ()
+@interface ViewController (){
+    UIImagePickerController * mPicker;
+}
 
 @end
 
@@ -16,12 +19,55 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    mPicker = [[UIImagePickerController alloc] init];
+    mPicker.delegate = self;
+    mPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+    CGImageRef cgRef= chosenImage.CGImage;
+    
+    ZXLuminanceSource *source = [[ZXCGImageLuminanceSource alloc] initWithCGImage:cgRef];
+    ZXBinaryBitmap *bitmap = [ZXBinaryBitmap binaryBitmapWithBinarizer:[ZXHybridBinarizer binarizerWithSource:source]];
+    
+    NSError *error = nil;
+    
+    // There are a number of hints we can give to the reader, including
+    // possible formats, allowed lengths, and the string encoding.
+    ZXDecodeHints *hints = [ZXDecodeHints hints];
+    
+    ZXMultiFormatReader *reader = [ZXMultiFormatReader reader];
+    ZXResult *result = [reader decode:bitmap
+                                hints:hints
+                                error:&error];
+    if (result) {
+        // The coded result as a string. The raw data can be accessed with
+        // result.rawBytes and result.length.
+        NSString *contents = result.text;
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"条形码" message:contents preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        [alertController addAction:cancleAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+    } else {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"条形码" message:@"找不到条形码" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        [alertController addAction:cancleAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+    
 }
 
+- (IBAction)startScanBanner:(id)sender {
+    [self presentViewController:mPicker animated:YES completion:NULL];
+}
 @end

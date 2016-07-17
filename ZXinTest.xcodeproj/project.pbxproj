@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD15A9CC590D3167A18FFD9D /* libPods-ZXinTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D408041027A6FF95FB0E1B8 /* libPods-ZXinTest.a */; };
 		DEC0C22E1D3BAE16007F91D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC0C22D1D3BAE16007F91D9 /* main.m */; };
 		DEC0C2311D3BAE16007F91D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC0C2301D3BAE16007F91D9 /* AppDelegate.m */; };
 		DEC0C2341D3BAE16007F91D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC0C2331D3BAE16007F91D9 /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D408041027A6FF95FB0E1B8 /* libPods-ZXinTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZXinTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA872C0AF2352C12C7F7AC32 /* Pods-ZXinTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXinTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZXinTest/Pods-ZXinTest.debug.xcconfig"; sourceTree = "<group>"; };
 		DEC0C2291D3BAE16007F91D9 /* ZXinTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZXinTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC0C22D1D3BAE16007F91D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DEC0C22F1D3BAE16007F91D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		DEC0C2381D3BAE16007F91D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEC0C23B1D3BAE16007F91D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEC0C23D1D3BAE16007F91D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4C60E175D1816B681A5CABF /* Pods-ZXinTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZXinTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZXinTest/Pods-ZXinTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD15A9CC590D3167A18FFD9D /* libPods-ZXinTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BCE6784C496423FAB3B1137 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA872C0AF2352C12C7F7AC32 /* Pods-ZXinTest.debug.xcconfig */,
+				F4C60E175D1816B681A5CABF /* Pods-ZXinTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DEC0C2201D3BAE16007F91D9 = {
 			isa = PBXGroup;
 			children = (
 				DEC0C22B1D3BAE16007F91D9 /* ZXinTest */,
 				DEC0C22A1D3BAE16007F91D9 /* Products */,
+				7BCE6784C496423FAB3B1137 /* Pods */,
+				E08C3B63F3EF15CF6F0C0E5A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +95,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E08C3B63F3EF15CF6F0C0E5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D408041027A6FF95FB0E1B8 /* libPods-ZXinTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEC0C2401D3BAE16007F91D9 /* Build configuration list for PBXNativeTarget "ZXinTest" */;
 			buildPhases = (
+				FAB7C13B59674C422AC8CE82 /* [CP] Check Pods Manifest.lock */,
 				DEC0C2251D3BAE16007F91D9 /* Sources */,
 				DEC0C2261D3BAE16007F91D9 /* Frameworks */,
 				DEC0C2271D3BAE16007F91D9 /* Resources */,
+				3FE1F17208C35239F2BBFC12 /* [CP] Embed Pods Frameworks */,
+				40F06FE21A03A3A4BEEB1198 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +170,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3FE1F17208C35239F2BBFC12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZXinTest/Pods-ZXinTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40F06FE21A03A3A4BEEB1198 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZXinTest/Pods-ZXinTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAB7C13B59674C422AC8CE82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DEC0C2251D3BAE16007F91D9 /* Sources */ = {
@@ -263,22 +338,26 @@
 		};
 		DEC0C2411D3BAE16007F91D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA872C0AF2352C12C7F7AC32 /* Pods-ZXinTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xinqi Chen (9Z2SRDCDFH)";
 				INFOPLIST_FILE = ZXinTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.product.0001.ZXinTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.product.ZXinTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		DEC0C2421D3BAE16007F91D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4C60E175D1816B681A5CABF /* Pods-ZXinTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = ZXinTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.product.0001.ZXinTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.product.ZXinTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -302,6 +381,7 @@
 				DEC0C2421D3BAE16007F91D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
